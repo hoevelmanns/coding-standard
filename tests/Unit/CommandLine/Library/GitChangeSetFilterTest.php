@@ -102,7 +102,10 @@ class GitChangeSetFilterTest extends TestCase
     public function filterByBlacklistAndFilterStringWithFilter()
     {
         $mockedFilter = 'wahwah';
-        $mockedFileList = new GitChangeSet([$this->blacklistedDirectory . '/mussWeg', $mockedFilter, 'bla'], 'asdaqwe212123');
+        $mockedFileList = new GitChangeSet(
+            [$this->blacklistedDirectory . '/mussWeg', $mockedFilter, 'bla'],
+            'asdaqwe212123'
+        );
         $expectedResult = [$mockedFilter];
 
         $this->subjectParameters[BlacklistFactory::class]->shouldReceive('build')

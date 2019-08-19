@@ -19,7 +19,7 @@ class GitInputValidator
         $this->processRunner = $processRunner;
     }
 
-    public function isCommitishValid($commitish) : bool
+    public function isCommitishValid($commitish): bool
     {
         if ($commitish === null) {
             return false;

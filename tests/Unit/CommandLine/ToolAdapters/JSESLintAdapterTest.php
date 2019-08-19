@@ -112,7 +112,7 @@ class JSESLintAdapterTest extends TestCase
      *
      * @return array
      */
-    public function callMethodsWithParametersCallsRunToolAndReturnsResultDataProvider() : array
+    public function callMethodsWithParametersCallsRunToolAndReturnsResultDataProvider(): array
     {
         return [
             'find Violations' => [

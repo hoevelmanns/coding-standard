@@ -6,7 +6,8 @@ use Symfony\Component\Console\Output\OutputInterface;
 use Zooroyal\CodingStandard\CommandLine\Library\Environment;
 use Zooroyal\CodingStandard\CommandLine\Library\GenericCommandRunner;
 
-class PHPCodeSnifferAdapter extends AbstractBlackAndWhitelistAdapter implements ToolAdapterInterface, FixerSupportInterface
+class PHPCodeSnifferAdapter extends AbstractBlackAndWhitelistAdapter
+    implements ToolAdapterInterface, FixerSupportInterface
 {
     /** @var string */
     protected $blacklistToken = '.dontSniffPHP';
@@ -45,9 +46,11 @@ class PHPCodeSnifferAdapter extends AbstractBlackAndWhitelistAdapter implements 
         $cbfWhitelistCommand = 'php ' . $rootDirectory . '/vendor/bin/phpcbf --extensions=php --standard='
             . $phpCodeSnifferConfig . ' %1$s';
         $sniffBlacklistCommand = 'php ' . $rootDirectory
-            . '/vendor/bin/phpcs -s --extensions=php --standard=' . $phpCodeSnifferConfig . ' --ignore=%1$s ' . $rootDirectory;
+            . '/vendor/bin/phpcs -s --extensions=php --standard=' . $phpCodeSnifferConfig . ' --ignore=%1$s '
+            . $rootDirectory;
         $cbfBlacklistCommand = 'php ' . $rootDirectory
-            . '/vendor/bin/phpcbf --extensions=php --standard=' . $phpCodeSnifferConfig . ' --ignore=%1$s ' . $rootDirectory;
+            . '/vendor/bin/phpcbf --extensions=php --standard=' . $phpCodeSnifferConfig . ' --ignore=%1$s '
+            . $rootDirectory;
 
         $this->commands = [
             'PHPCSWL' => $sniffWhitelistCommand,

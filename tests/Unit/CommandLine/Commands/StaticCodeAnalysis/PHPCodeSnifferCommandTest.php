@@ -135,8 +135,11 @@ class PHPCodeSnifferCommandTest extends TestCase
      * @param bool   $mockedProcessIsolation
      * @param bool   $mockedFixMode
      */
-    private function prepareInputInterfaceMock(string $mockedTargetBranch, bool $mockedProcessIsolation, bool $mockedFixMode)
-    {
+    private function prepareInputInterfaceMock(
+        string $mockedTargetBranch,
+        bool $mockedProcessIsolation,
+        bool $mockedFixMode
+    ) {
         $this->mockedInputInterface->shouldReceive('getOption')->once()
             ->with('target')->andReturn($mockedTargetBranch);
         $this->mockedInputInterface->shouldReceive('getOption')->once()

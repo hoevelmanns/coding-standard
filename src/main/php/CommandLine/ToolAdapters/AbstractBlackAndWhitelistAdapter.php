@@ -74,37 +74,37 @@ abstract class AbstractBlackAndWhitelistAdapter
         return $exitCode;
     }
 
-    public function getBlacklistToken() : string
+    public function getBlacklistToken(): string
     {
         return $this->blacklistToken;
     }
 
-    public function getFilter() : string
+    public function getFilter(): string
     {
         return $this->filter;
     }
 
-    public function getBlacklistPrefix() : string
+    public function getBlacklistPrefix(): string
     {
         return $this->blacklistPrefix;
     }
 
-    public function getBlacklistGlue() : string
+    public function getBlacklistGlue(): string
     {
         return $this->blacklistGlue;
     }
 
-    public function getWhitelistGlue() : string
+    public function getWhitelistGlue(): string
     {
         return $this->whitelistGlue;
     }
 
-    public function getCommands() : array
+    public function getCommands(): array
     {
         return $this->commands;
     }
 
-    public function isEscape() : bool
+    public function isEscape(): bool
     {
         return $this->escape;
     }

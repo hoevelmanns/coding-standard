@@ -65,7 +65,7 @@ class GitChangeSetFilter
      *
      * @return array
      */
-    protected function iterateOverFiles(string $filter, array $files, array $list) : array
+    protected function iterateOverFiles(string $filter, array $files, array $list): array
     {
         $result = [];
         foreach ($files as $filePath) {
@@ -102,7 +102,7 @@ class GitChangeSetFilter
      *
      * @throws LogicException
      */
-    private function mergeLists(array $blacklist, array $whitelist) : array
+    private function mergeLists(array $blacklist, array $whitelist): array
     {
         if (count(array_intersect($blacklist, $whitelist)) !== 0) {
             throw new LogicException('Directories can\'t be black- and whitelisted at the same time', 1553780055);

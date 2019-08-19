@@ -76,7 +76,7 @@ class FindFilesToCheckCommand extends Command
      *
      * @SuppressWarnings(PHPMD.ExcessiveMethodLength)
      */
-    private function buildInputDefinition() : InputDefinition
+    private function buildInputDefinition(): InputDefinition
     {
         return new InputDefinition(
             [

@@ -102,7 +102,12 @@ class IssueCommentAddCommandTest extends TestCase
         $this->subjectParameters[Client::class]->shouldReceive('authenticate')->once()
             ->with($expectedTokenValue, '', Client::AUTH_URL_TOKEN);
         $this->subjectParameters[Client::class]->shouldReceive('issue->comments->create')->once()
-            ->with($expectedOrganisationValue, $expectedRepositoryValue, $expectedIssueIdValue, $expectedParameterValue);
+            ->with(
+                $expectedOrganisationValue,
+                $expectedRepositoryValue,
+                $expectedIssueIdValue,
+                $expectedParameterValue
+            );
 
         $this->subject->execute($this->mockedInputInterface, $this->mockedOutputInterface);
     }

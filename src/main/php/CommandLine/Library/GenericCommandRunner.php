@@ -59,7 +59,7 @@ class GenericCommandRunner
         string $filter,
         bool $processIsolation = false,
         string $glue = ','
-    ) : int {
+    ): int {
         $exitCode = 0;
         $whitelistArguments = $this->buildWhitelistArguments(
             $targetBranch,
@@ -129,7 +129,7 @@ class GenericCommandRunner
         string $filter,
         bool $processIsolation,
         string $glue = ','
-    ) : array {
+    ): array {
         $gitChangeSet = $this->adaptableFileFinder->findFiles($filter, $blacklistToken, '', $targetBranch);
         $changedFiles = $gitChangeSet->getFiles();
 

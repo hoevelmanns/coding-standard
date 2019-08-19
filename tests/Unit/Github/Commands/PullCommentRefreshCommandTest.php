@@ -177,7 +177,9 @@ class PullCommentRefreshCommandTest extends TestCase
             ->with(
                 $this->mockedArguments['organisation'],
                 $this->mockedArguments['repository'],
-                H::either(H::is($this->mockedOwnStaleComment['id']))->orElse(H::is($this->mockedOwnCurrentComment['id']))
+                H::either(H::is($this->mockedOwnStaleComment['id']))->orElse(
+                    H::is($this->mockedOwnCurrentComment['id'])
+                )
             );
 
         $this->subjectParameters[Client::class]->shouldReceive('pullRequest->comments->create')->once()

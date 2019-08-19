@@ -5,7 +5,7 @@
     </description>
 
     <!-- Referenced Rulesets -->
-    <rule ref="PSR2">
+    <rule ref="PSR12">
         <exclude name="PSR2.Classes.ClassDeclaration"/>
     </rule>
 
@@ -51,28 +51,16 @@
     <rule ref="Generic.CodeAnalysis.UnnecessaryFinalModifier"/>
     <rule ref="Generic.Commenting.Fixme"/>
     <rule ref="Generic.Commenting.Todo"/>
-    <rule ref="Generic.ControlStructures.InlineControlStructure"/>
     <rule ref="Generic.Debug.ClosureLinter"/>
     <rule ref="Generic.Debug.CSSLint"/>
     <rule ref="Generic.Debug.JSHint"/>
-    <rule ref="Generic.Files.ByteOrderMark"/>
     <rule ref="Generic.Files.InlineHTML"/>
-    <rule ref="Generic.Files.LineEndings"/>
-    <rule ref="Generic.Files.LineLength">
-        <properties>
-            <property name="lineLimit" value="130"/>
-            <property name="absoluteLineLimit" value="0"/>
-        </properties>
-    </rule>
     <rule ref="Generic.Files.OneClassPerFile"/>
     <rule ref="Generic.Files.OneInterfacePerFile"/>
-    <rule ref="Generic.Formatting.DisallowMultipleStatements"/>
     <rule ref="Generic.Formatting.SpaceAfterCast"/>
     <rule ref="Generic.Functions.CallTimePassByReference"/>
-    <rule ref="Generic.Functions.FunctionCallArgumentSpacing"/>
     <rule ref="Generic.Metrics.NestingLevel"/>
     <rule ref="Generic.NamingConventions.ConstructorName"/>
-    <rule ref="Generic.NamingConventions.UpperCaseConstantName"/>
     <rule ref="Generic.PHP.CharacterBeforePHPOpeningTag"/>
     <rule ref="Generic.PHP.DeprecatedFunctions"/>
     <rule ref="Generic.PHP.ForbiddenFunctions">
@@ -83,13 +71,9 @@
             />
         </properties>
     </rule>
-    <rule ref="Generic.PHP.LowerCaseConstant"/>
-    <rule ref="Generic.PHP.LowerCaseKeyword"/>
     <rule ref="Generic.PHP.NoSilencedErrors"/>
     <rule ref="Generic.PHP.SAPIUsage"/>
     <rule ref="Generic.VersionControl.SubversionProperties"/>
-    <rule ref="Generic.WhiteSpace.DisallowTabIndent"/>
-    <rule ref="Generic.WhiteSpace.ScopeIndent"/>
 
     <rule ref="MySource.Channels.DisallowSelfActions"/>
     <rule ref="MySource.Channels.IncludeOwnSystem"/>
@@ -103,7 +87,6 @@
 
     <rule ref="PEAR.Commenting.InlineComment"/>
     <rule ref="PEAR.Formatting.MultiLineAssignment"/>
-    <rule ref="PEAR.Functions.ValidDefaultValue"/>
     <rule ref="PEAR.WhiteSpace.ObjectOperatorIndent"/>
     <rule ref="PEAR.WhiteSpace.ScopeClosingBrace"/>
 
@@ -194,11 +177,8 @@
     <rule ref="Squiz.Commenting.PostStatementComment"/>
     <rule ref="Squiz.Commenting.DocCommentAlignment"/>
     <rule ref="Squiz.ControlStructures.ForEachLoopDeclaration"/>
-    <rule ref="Squiz.ControlStructures.ForLoopDeclaration"/>
-    <rule ref="Squiz.Functions.FunctionDeclaration"/>
     <rule ref="Squiz.Functions.FunctionDuplicateArgument"/>
     <rule ref="Squiz.Functions.GlobalFunction"/>
-    <rule ref="Squiz.Functions.LowercaseFunctionKeywords"/>
     <rule ref="Squiz.Objects.DisallowObjectStringIndex"/>
     <rule ref="Squiz.Objects.ObjectMemberComma"/>
     <rule ref="Squiz.Operators.IncrementDecrementUsage"/>
@@ -218,17 +198,13 @@
     <rule ref="Squiz.PHP.LowercasePHPFunctions"/>
     <rule ref="Squiz.PHP.NonExecutableCode"/>
     <rule ref="Squiz.Scope.MemberVarScope"/>
-    <rule ref="Squiz.Scope.MethodScope"/>
     <rule ref="Squiz.Scope.StaticThisUsage"/>
     <rule ref="Squiz.Strings.DoubleQuoteUsage"/>
     <rule ref="Squiz.Strings.EchoedStrings"/>
-    <rule ref="Squiz.WhiteSpace.CastSpacing"/>
     <rule ref="Squiz.WhiteSpace.FunctionOpeningBraceSpace"/>
     <rule ref="Squiz.WhiteSpace.LanguageConstructSpacing"/>
     <rule ref="Squiz.WhiteSpace.LogicalOperatorSpacing"/>
     <rule ref="Squiz.WhiteSpace.PropertyLabelSpacing"/>
-    <rule ref="Squiz.WhiteSpace.ScopeClosingBrace"/>
-    <rule ref="Squiz.WhiteSpace.ScopeKeywordSpacing"/>
     <rule ref="Squiz.WhiteSpace.SemicolonSpacing"/>
 
     <rule ref="Zend.Debug.CodeAnalyzer"/>

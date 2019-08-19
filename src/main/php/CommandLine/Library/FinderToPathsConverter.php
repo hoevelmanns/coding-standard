@@ -14,7 +14,7 @@ class FinderToPathsConverter
      *
      * @return string[]
      */
-    public function finderToArrayOfPaths(Finder $finder) : array
+    public function finderToArrayOfPaths(Finder $finder): array
     {
         $result = array_map(
             function ($value) {

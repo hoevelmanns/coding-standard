@@ -63,8 +63,12 @@ class ForbiddenChangesCommandTest extends TestCase
         $localSubject->shouldReceive('setHelp')->once()
             ->with(
                 'This tool checks if there where changes made to files. If a parent directory contains a '
-                . ' ' . $this->blacklistToken . ' file the tools will report the violation. Changes in subdirectories of a '
-                . 'marked directory may be allowed by placing a ' . $this->whitelistToken . ' file in the subdirectory.'
+                . ' '
+                . $this->blacklistToken
+                . ' file the tools will report the violation. Changes in subdirectories of a '
+                . 'marked directory may be allowed by placing a '
+                . $this->whitelistToken
+                . ' file in the subdirectory.'
                 . ' Use parameter to determine if this should be handled as Warning or not.'
             );
         $localSubject->shouldReceive('setDefinition')->once()
@@ -96,7 +100,7 @@ class ForbiddenChangesCommandTest extends TestCase
      *
      * @return mixed[]
      */
-    public function executeInteractsWithWarningFlagDataProvider() : array
+    public function executeInteractsWithWarningFlagDataProvider(): array
     {
         return [
             'warning' => [

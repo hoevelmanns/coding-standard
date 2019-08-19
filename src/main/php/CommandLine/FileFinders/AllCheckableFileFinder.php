@@ -48,7 +48,7 @@ class AllCheckableFileFinder implements FileFinderInterface
         string $blacklistToken = '',
         string $whitelistToken = '',
         $targetBranch = ''
-    ) : GitChangeSet {
+    ): GitChangeSet {
         $filesFromGit = explode("\n", trim($this->processRunner->runAsProcess('git', 'ls-files')));
         $gitChangeSet = $this->gitChangeSetFactory->build($filesFromGit, '');
 

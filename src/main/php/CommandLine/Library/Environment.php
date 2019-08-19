@@ -35,12 +35,12 @@ class Environment
         $this->gitInputValidator = $gitInputValidator;
     }
 
-    public function getRootDirectory() : string
+    public function getRootDirectory(): string
     {
         return realpath(ComposerLocator::getRootPath());
     }
 
-    public function getPackageDirectory() : string
+    public function getPackageDirectory(): string
     {
         return realpath(
             ComposerLocator::getPath('zooroyal/coding-standard')
@@ -52,7 +52,7 @@ class Environment
         return $this->getRootDirectory() . '/node_modules';
     }
 
-    public function getBlacklistedDirectories() : array
+    public function getBlacklistedDirectories(): array
     {
         return $this->blacklistedDirectories;
     }
@@ -64,7 +64,7 @@ class Environment
      *
      * @return bool
      */
-    public function isLocalBranchEqualTo($targetBranch) : bool
+    public function isLocalBranchEqualTo($targetBranch): bool
     {
         if (!$this->gitInputValidator->isCommitishValid($targetBranch)) {
             return false;
@@ -79,14 +79,14 @@ class Environment
     }
 
     /**
-     * This method searches the first parent commit which is part of another branch and returns this commit as merge base
-     * with parent branch.
+     * This method searches the first parent commit which is part of another branch and returns this commit as merge
+     * base with parent branch.
      *
      * @param string $branchName
      *
      * @return string
      */
-    public function guessParentBranchAsCommitHash(string $branchName = 'HEAD') : string
+    public function guessParentBranchAsCommitHash(string $branchName = 'HEAD'): string
     {
         $initialNumberOfContainingBranches = $this->getCountOfContainingBranches($branchName);
         while ($this->isParentCommitishACommit($branchName)) {
@@ -109,7 +109,7 @@ class Environment
      *
      * @return int
      */
-    private function getCountOfContainingBranches(string $targetCommit) : int
+    private function getCountOfContainingBranches(string $targetCommit): int
     {
         $numberOfContainingBranches = substr_count(
             $this->processRunner->runAsProcess(
@@ -132,7 +132,7 @@ class Environment
      *
      * @return bool
      */
-    private function isParentCommitishACommit(string $targetCommit) : bool
+    private function isParentCommitishACommit(string $targetCommit): bool
     {
         $targetType = $this->processRunner->runAsProcess('git', 'cat-file', '-t', $targetCommit . '^');
 
@@ -146,7 +146,7 @@ class Environment
      *
      * @return string
      */
-    private function commitishToHash(string $branchName) : string
+    private function commitishToHash(string $branchName): string
     {
         return $this->processRunner->runAsProcess('git', 'rev-list', '-n 1', $branchName);
     }

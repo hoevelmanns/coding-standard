@@ -49,12 +49,13 @@ class AllToolsCommandTest extends TestCase
         $localSubject->shouldReceive('setHelp')->once()
             ->with(
                 'This tool executes all static code analysis tools on files of this project. '
-                . 'It ignores files which are in directories with a .dont<toolshortcut> file. Subdirectories are ignored too.'
+                . 'It ignores files which are in directories with a .dont<toolshortcut> file. Subdirectories are '
+                . 'ignored too.'
             );
         $localSubject->shouldReceive('setDefinition')->once()
             ->with(
                 Mockery::on(
-                    function ($value) {
+                    static function ($value) {
                         MatcherAssert::assertThat($value, H::anInstanceOf(InputDefinition::class));
                         /** @var InputDefinition $value */
                         $options = $value->getOptions();
@@ -76,7 +77,7 @@ class AllToolsCommandTest extends TestCase
         $localSubject->configure();
     }
 
-    public function executeRunsAllCommandsDataProvider()
+    public function executeRunsAllCommandsDataProvider(): array
     {
         return [
             'success' => ['returnValue' => 0, 'outputCount' => 0],
@@ -87,6 +88,9 @@ class AllToolsCommandTest extends TestCase
     /**
      * @test
      * @dataProvider executeRunsAllCommandsDataProvider
+     *
+     * @param int $returnValue
+     * @param int $outputCount
      */
     public function executeRunsAllCommands($returnValue, $outputCount)
     {

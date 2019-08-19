@@ -51,7 +51,7 @@ class DiffCheckableFileFinder implements FileFinderInterface
         string $blacklistToken = '',
         string $whitelistToken = '',
         $targetBranch = ''
-    ) : GitChangeSet {
+    ): GitChangeSet {
         if (empty($targetBranch)) {
             throw new InvalidArgumentException(
                 'Finding a diff makes no sense without a target branch.',
@@ -72,7 +72,7 @@ class DiffCheckableFileFinder implements FileFinderInterface
      *
      * @return GitChangeSet
      */
-    private function findFilesInDiffToTarget(string $targetBranch) : GitChangeSet
+    private function findFilesInDiffToTarget(string $targetBranch): GitChangeSet
     {
         $mergeBase = $this->processRunner->runAsProcess('git', 'merge-base', 'HEAD', $targetBranch);
 

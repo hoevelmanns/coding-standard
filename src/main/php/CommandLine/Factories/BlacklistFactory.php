@@ -39,7 +39,7 @@ class BlacklistFactory
      *
      * @return string[]
      */
-    public function build(string $token = '', bool $deDuped = true) : array
+    public function build(string $token = '', bool $deDuped = true): array
     {
         $rawExcludePathsByFileByToken = [];
 
@@ -95,7 +95,7 @@ class BlacklistFactory
      *
      * @return string[]
      */
-    public function findTokenDirectories(string $token) : array
+    public function findTokenDirectories(string $token): array
     {
         $tokenFinder = $this->finderFactory->build();
         $tokenFinder->in($this->environment->getRootDirectory())->files()->name($token);
@@ -109,7 +109,7 @@ class BlacklistFactory
      *
      * @return string[]
      */
-    private function findGitDirectories() : array
+    private function findGitDirectories(): array
     {
         $finderGit = $this->finderFactory->build();
         $finderGit->in($this->environment->getRootDirectory())->depth('> 0')->path('/.git$/');
@@ -124,7 +124,7 @@ class BlacklistFactory
      *
      * @return string[]
      */
-    private function findDirectoriesFromEnvironment(Environment $environment) : array
+    private function findDirectoriesFromEnvironment(Environment $environment): array
     {
         $finderBlacklist = $this->finderFactory->build();
         $finderBlacklist->in($environment->getRootDirectory())->directories();
