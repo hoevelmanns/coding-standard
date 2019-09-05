@@ -4,7 +4,7 @@
   "description": "ZooRoyal Coding Standard package.json",
   "private": true,
   "homepage": "https://github.com/ZooRoyal/coding-standard",
-  "dependencies": {
+  "devDependencies": {
     "eslint": "^5.16.0",
     "eslint-config-crockford": "^2.0.0",
     "eslint-config-m99coder": "^0.1.0",
