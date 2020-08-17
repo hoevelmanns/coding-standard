@@ -1,105 +1,96 @@
-const path = require("path");
+/**
+ * eslint config
+ *
+ * @licence REWE Digital GmbH
+ */
+
 module.exports = {
-    "extends": [
-        "eslint:recommended",
-        "standard",
-        "eslint-config-crockford",
-        "plugin:import/errors",
-        "plugin:import/warnings"
+    'extends': [
+        'eslint:recommended',
+        'standard'
     ],
-    "plugins": [
-        "m99coder",
-        "standard",
-        "import"
+    'plugins': [
+        'standard'
     ],
-    "parserOptions": {
-        "ecmaVersion": 6,
-        "sourceType": "module",
-        "ecmaFeatures": {
-            "jsx": false,
-            "impliedStrict": true
-        },
-        "useJSXTextNode": true
+    'parserOptions': {
+        'ecmaVersion': 5,
+        'sourceType': 'script'
     },
-    "root": true,
-    "env": {
-        "browser": true,
-        "jquery": true,
-        "es6": true,
-        "jest": true,
-        "node": true,
-        "builtin": true
+    'root': true,
+    'env': {
+        'browser': true,
+        'jquery': true
     },
-    "globals": {
-        "$": false,
-        "jQuery": true,
-        "console": true,
-        "module": true,
-        "window": true,
-        "document": true,
-        "require": true,
-        "_": true
+    'globals': {
+        '$': false,
+        'jQuery': true,
+        'console': true,
+        'module': true,
+        'window': true,
+        'document': true,
+        'require': true,
+        '_': true,
+        'pageData': true, // tracking object for CMP
+        '_satellite': true // Adobe tracking function
     },
-    "rules": {
-        "new-cap": 2,
-        "no-caller": 2,
-        "no-eq-null": 2,
-        "indent": [
-            "error",
+    /**
+     * 0 = turned off
+     * 1 = warning
+     * 2 = error
+     */
+    'rules': {
+        'new-cap': 1,
+        'no-caller': 0,
+        'no-eq-null': 2,
+        'indent': [
+            'error',
             4
         ],
-        "linebreak-style": [
-            "error",
-            "unix"
+        'linebreak-style': [
+            'error',
+            'unix'
         ],
-        "quotes": [
-            "error",
-            "double"
+        'quotes': [
+            'error',
+            'single'
         ],
-        "semi": [
-            "error",
-            "always"
-        ],
-        "one-var": "off",
-        "eqeqeq": ["error", "smart"],
-        "curly": "error",
-        "for-direction": "error",
-        "no-tabs": "error",
-        "complexity": ["error", 20], //20 is default
-        "no-undef": "off",
-        "no-plusplus": ["error", {"allowForLoopAfterthoughts": true}],
-        "no-underscore-dangle": "off",
-        "wrap-iife": ["error", "inside"],
-        "no-alert": "error",
-        "no-empty-function": "error",
-        "no-useless-catch": "error",
-        "no-eval": "error",
-        "no-implied-eval": "error",
-        "no-script-url": "error",
-        "no-useless-call": "error",
-        "vars-on-top": "off",
-        //es6
-        "arrow-spacing": ["error", { "before": true, "after": true }],
-        "no-confusing-arrow": ["error", {"allowParens": false }],
-        "allow-parens": ["as-needed", { "requireForBlockBody": true }],
-        "no-useless-constructor": "error",
-        "no-dupe-class-members": "error",
-        "no-duplicate-imports": "error",
-        "no-useless-computed-key": "error",
-        "no-restricted-properties": "error",
-        "operator-linebreak": "error",
-        "no-nested-ternary": "error",
-        "no-unneeded-ternary": "error",
-        //plugin:standard
-        'standard/object-curly-even-spacing': [2, "either"],
-        'standard/array-bracket-even-spacing': [2, "either"],
-        'standard/computed-property-even-spacing': [2, "even"],
-        'standard/no-callback-literal': [2, ["cb", "callback"]],
-        //plugin:import
-        "import/no-unresolved": [2, {commonjs: true, amd: true}],
-        "import/named": 2,
-        "import/namespace": 2,
-        "import/default": 2,
-        "import/export": 2
+        'semi': 0,
+        'one-var': 0,
+        'eqeqeq': ['error', 'smart'],
+        'curly': 0,
+        'for-direction': 0,
+        'no-tabs': 'error',
+        'complexity': ['error', 20], //20 is default
+        'no-undef': 2,
+        'no-plusplus': 0,
+        'no-underscore-dangle': 0,
+        'wrap-iife': ['error', 'any'],
+        'no-alert': 2,
+        'no-empty-function': 2,
+        'no-useless-catch': 2,
+        'no-eval': 2,
+        'no-implied-eval': 2,
+        'no-script-url': 2,
+        'no-useless-call': 2,
+        'vars-on-top': 0,
+        'no-console': 0,
+        'no-trailing-spaces': 0,
+        // es6
+        'arrow-spacing': ['error', { 'before': true, 'after': true }],
+        'no-confusing-arrow': ['error', {'allowParens': false }],
+        'allow-parens': ['as-needed', { 'requireForBlockBody': true }],
+        'no-useless-constructor': 2,
+        'no-dupe-class-members': 2,
+        'no-duplicate-imports': 2,
+        'no-useless-computed-key': 2,
+        'no-restricted-properties': 2,
+        'operator-linebreak': 2,
+        'no-nested-ternary': 2,
+        'no-unneeded-ternary': 2,
+        // plugin:standard
+        'standard/object-curly-even-spacing': [2, 'either'],
+        'standard/array-bracket-even-spacing': [2, 'either'],
+        'standard/computed-property-even-spacing': [2, 'even'],
+        'standard/no-callback-literal': [2, ['cb', 'callback']]
     }
 };
